@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active-link">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon.png" id="moon">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" id="mountains_front">
+    </section>
+
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt error sapiente pariatur nisi, harum facilis dignissimos adipisci ipsum laboriosam modi, ab dolores est hic, animi soluta consequatur magnam odio accusamus?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste consequuntur, id commodi architecto perspiciatis cum quam rem tempore eaque ab odit eveniet modi similique ea debitis error! Debitis, voluptates aut.
+            <br><br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati delectus sed labore expedita molestias? Exercitationem voluptate, officia illum, sapiente accusantium facere eum harum fugit unde dolorem qui dignissimos ipsa expedita?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex adipisci eveniet repudiandae ab. Vitae deleniti nemo aspernatur quis dignissimos quidem pariatur, exercitationem assumenda reprehenderit laboriosam temporibus vero laborum minus perspiciatis?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, rem. Corrupti, quasi soluta? Doloremque tempora voluptates recusandae assumenda alias, eos perspiciatis, nisi autem, placeat accusamus distinctio odit animi neque iure.
+            <br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error mollitia veritatis molestiae deserunt voluptates quae ipsa repellat incidunt minima cupiditate totam, qui maiores nostrum sint rerum recusandae, corporis, nesciunt itaque.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis voluptatibus laborum alias officiis culpa incidunt nam debitis aspernatur perferendis. Corrupti rem obcaecati officia, consequatur at labore esse veniam earum consectetur.
+            <br><br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste consequuntur, id commodi architecto perspiciatis cum quam rem tempore eaque ab odit eveniet modi similique ea debitis error! Debitis, voluptates aut.
+            <br><br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati delectus sed labore expedita molestias? Exercitationem voluptate, officia illum, sapiente accusantium facere eum harum fugit unde dolorem qui dignissimos ipsa expedita?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex adipisci eveniet repudiandae ab. Vitae deleniti nemo aspernatur quis dignissimos quidem pariatur, exercitationem assumenda reprehenderit laboriosam temporibus vero laborum minus perspiciatis?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, rem. Corrupti, quasi soluta? Doloremque tempora voluptates recusandae assumenda alias, eos perspiciatis, nisi autem, placeat accusamus distinctio odit animi neque iure.
+            <br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error mollitia veritatis molestiae deserunt voluptates quae ipsa repellat incidunt minima cupiditate totam, qui maiores nostrum sint rerum recusandae, corporis, nesciunt itaque.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis voluptatibus laborum alias officiis culpa incidunt nam debitis aspernatur perferendis. Corrupti rem obcaecati officia, consequatur at labore esse veniam earum consectetur.
+        </p>
+    </div>
+    
+    <script>
+        let stars = document.getElementById("stars");
+        let moon = document.getElementById("moon");
+        let mountains_behind = document.getElementById("mountains_behind");
+        let text = document.getElementById("text");
+        let btn = document.getElementById("btn");
+        let mountains_front = document.getElementById("mountains_front");
+        let header = document.querySelector('header')
+
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 3 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.marginTop = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>

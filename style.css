@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(#2b1055,#7597de);
+    overflow-x: hidden;
+}
+
+header{
+    width: 100%;
+    padding: 30px 100px;
+   
+    /*Para que el header pueda flotar sobre el body*/
+    position: absolute; /*Absolute positioned elements are removed from the normal flow, and can overlap elements.*/
+    top: 0;
+    left: 0;
+
+    /* Acomodar horizontalmente los menus */
+    display: flex; /*los acomoda horizontalmente, por defecto lo acomoda como row pero eso puede cambiar con flex-direction*/
+    justify-content: space-between; /*manda los elementos a los extremos , si son dos a la izquieda y a la derecha , si son 3 , el tercero en el centro o el cuarto le da su esapcio */
+    align-items: center; /*Centramos verticalmete*/
+
+    z-index: 10000;
+}
+
+header .logo{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+
+header ul li a:hover,
+header ul li a.active-link{
+    background: #fff;
+    color: #2b1055;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section::before{
+    /* Damos forma y fondo al pseudoelemento */
+    content: '';
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #1c0522,transparent);
+
+    /* Posicionamos */
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+}
+
+section img{
+    position: absolute;
+    /* con top y left provocas que se ignoren las instrucciones de justify content y align items */
+    top: 0;
+    left: 0;
+
+    /* Quitamos los scroll y ajustamos al tamanio de la pantalla  por que ya tiene heredado el viewport height del section*/
+    width: 100%; 
+    height: 100%;
+
+    /* Ajustamos las imagenes para que no se deformen */
+    object-fit: cover;
+
+    pointer-events: none;
+}
+
+section img#moon{
+    mix-blend-mode: screen;
+}
+section img#mountains_front{
+    z-index: 10;
+}
+#text{
+    position: absolute;
+    right: -350px;
+    color: #fff;
+    white-space: nowrap; /*El texto no se romperá en varias líneas; todo el contenido se mantendrá en una sola línea, independientemente de la longitud del texto.*/
+    font-size: 7.5vw;
+    z-index: 9;
+}
+#btn{
+    text-decoration: none;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px);
+}
+
+.sec{
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+}
+
+.sec h2{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.sec p{
+    font-size: 1.2em;
+    color: #fff;
+}
+
+/* 
+    Flex-wrap permite que conserve su min width los elementos y pase para abajo los que ya no caben  
+    flex-flow: permite establecer el flex-direction y el flex-wrap
+
+*/
+
+
